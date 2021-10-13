@@ -10,7 +10,16 @@
 // cinnamon
 // cumin
 // cocoa
+ 
+let favoriteRecipe = {
+  title : 'Mole',
+  serves : 2,
+  ingredients : ['cinnamon','cumin','cocoa']
+}
 
+console.log(favoriteRecipe.title)
+console.log(favoriteRecipe.serves)
+console.log(`${favoriteRecipe.ingredients}`)
 
 
 
@@ -24,7 +33,17 @@
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+let books = [{title: '1984' , author: 'George Orwell', value: true},{title: 'Death By the Bay' , author: 'Patrica Skalka', value: false},{title: 'Beast' , author: 'Donna Jo Napoli ', value: false}];
+//let read = 2
+for (i = 0; i < books.length; i++){
+  
+  if(books[i].value === true){
+    console.log(`YOu already read ${books[i].title} by ${books[i].author}`)
+  }else{
+    console.log(`You have not read any of the books`)
+  }
 
+}  
 
 //Exercise #3
 //Create your object representing your favorite movie, like so
@@ -42,6 +61,19 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
+let shawshank = {
+  title: 'Shawshank Redemption',
+  director: 'Frank Darabont',
+  actors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton'],
+  releaseYear: 1994, 
+  duration: 142
+}
+let exraTime = shawshank.duration + 30
+console.log(`Title : ${shawshank.title}`)
+console.log(`director: ${shawshank.director}`)
+//console.log(`actors: ${shawshank.actors}`)
+console.log(`releaseYear: ${shawshank.releaseYear}`)
+console.log(`duration: ${exraTime}`)
 
 
 
@@ -52,8 +84,21 @@
 // How do you check if an object is an array or not? 
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
-let arrayList = [1, 2, 3];
+let arrayList = [1,2,3] ;
+  
+function checkForArray (group){
 
+let stem = Array.isArray(group)
+
+if ( typeof group === 'object' && stem != true){
+ console.log(`${group} is an objects`)
+}else if( stem === true){
+  console.log(`${group} is an array not an object`)
+}else{
+  console.log(`you messed up`)
+}
+}
+checkForArray(arrayList)
 
 //Exercise #5
 // Write a function countCharacters that, when given a string as an argument,
